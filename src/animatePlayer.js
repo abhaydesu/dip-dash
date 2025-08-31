@@ -2,12 +2,12 @@ import * as THREE from "three";
 import { moveQueue, stepCompleted } from "./components/Player";
 import { player, position} from "./components/Player";
 import { tileSize } from "./constants";
-import { isGameOn, gameOn } from "./constants";
+import { isGamePaused, isGameOn, gameOn } from "./pause";
 
 const moveClock = new THREE.Clock(false);
 
 export function animatePlayer() {
-    if (isGameOn) { 
+    if (!isGameOn || isGamePaused ) return;
     if (!moveQueue.length) return;
 
     if (!moveClock.running) moveClock.start();
@@ -22,7 +22,6 @@ export function animatePlayer() {
         stepCompleted();
         moveClock.stop();
     }
-}
 }
 
 function setPosition(progress) {

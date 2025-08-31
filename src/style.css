@@ -67,8 +67,9 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: #dcfce7;
-    padding: 30px;
+    padding: 34px 40px;
     border: 5px solid #052e16;
+    border-radius: 10px;
   }
 
   button { 
@@ -84,7 +85,39 @@ body {
 #overlay { 
   visibility: hidden;
   position: absolute;
-  background-color: #bbf7d070;
+  background-color: #1a2e0575;
   height: 100vh;
   width: 193.7vh;
+}
+
+#pause-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #1a2e0560;  /* dark transparent overlay */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#pause-content {
+  border: 5px solid #052e16;
+  background-color: #dcfce7;
+  padding: 70px 100px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#resume-btn { 
+    all: unset;
+    color: #ecfccb;
+    background-color: #65a30d;
+    padding: 10px 20px;
+    box-shadow: 5px 5px #052e16 ;
+    cursor: pointer;
+
+    /* font-family: inherit;
+    font-size: inherit;
+    cursor: pointer; */
 }

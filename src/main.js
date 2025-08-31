@@ -7,7 +7,7 @@ import { map, initializeMap } from "./components/Map";
 import { animateVehicles } from "./animateVehicles";
 import { animatePlayer } from "./animatePlayer";
 import { hitTest } from "./hitTest";
-import { gameOn } from "./constants";
+import { gameOn, isGamePaused, togglePause } from "./pause";
 import "./style.css";
 import "./collectUserInput";
 
@@ -25,13 +25,20 @@ player.add(dirLight);
 const camera = Camera();
 player.add(camera);
 
+const retryDOM = document.getElementById('retry');
 const overlayDOM = document.getElementById('overlay');
 const scoreDOM = document.getElementById("score");
 const resultDOM = document.getElementById("result-container");
 
 initializeGame();
 
-document.getElementById("retry")?.addEventListener("click", initializeGame);
+retryDOM.addEventListener("click", initializeGame);
+retryDOM.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        initializeGame();
+    }
+});
 
 function initializeGame() {
   initializePlayer();
@@ -43,10 +50,26 @@ function initializeGame() {
   if (overlayDOM) overlayDOM.style.visibility = "hidden";
 }
 
+const pauseScreen = document.getElementById("pause-screen");
+const resumeBtn = document.getElementById("resume-btn");
+
+resumeBtn.addEventListener("click", () => {
+  togglePause()
+});
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    togglePause();
+  }
+});
+
+
 const renderer = Renderer();
-renderer.setAnimationLoop(animate);
+
+if (!isGamePaused)  renderer.setAnimationLoop(animate);
 
 function animate() {
+
   animateVehicles();
   animatePlayer();
   hitTest();

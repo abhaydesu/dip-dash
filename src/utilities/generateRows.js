@@ -53,7 +53,11 @@ function generateCarLaneMetadata() {
                 minTileIndex,
                 maxTileIndex
             );
-        } while (occupiedTiles.has(initialTileIndex));
+        } while (
+            occupiedTiles.has(initialTileIndex - 1) ||
+            occupiedTiles.has(initialTileIndex) ||
+            occupiedTiles.has(initialTileIndex + 1)
+        );
         occupiedTiles.add(initialTileIndex - 1);
         occupiedTiles.add(initialTileIndex);
         occupiedTiles.add(initialTileIndex + 1);
@@ -79,7 +83,13 @@ function generateTruckLaneMetadata() {
                 minTileIndex,
                 maxTileIndex
             );
-        } while (occupiedTiles.has(initialTileIndex));
+        } while (
+            occupiedTiles.has(initialTileIndex - 2) ||
+            occupiedTiles.has(initialTileIndex - 1) ||
+            occupiedTiles.has(initialTileIndex) ||
+            occupiedTiles.has(initialTileIndex + 1) ||
+            occupiedTiles.has(initialTileIndex + 2)
+        );
         occupiedTiles.add(initialTileIndex - 2);
         occupiedTiles.add(initialTileIndex - 1);
         occupiedTiles.add(initialTileIndex);

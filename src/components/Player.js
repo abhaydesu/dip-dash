@@ -82,5 +82,7 @@ export function stepCompleted() {
     let currentScore = Number(scoreDOM.innerText)
     if ( position.currentRow.toString() > currentScore) {
         scoreDOM.innerText = ++currentScore;
+        document.getElementById('current-score').innerText = currentScore;
+        document.getElementById('final-score').innerText = currentScore;
     }
 }
