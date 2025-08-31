@@ -9,7 +9,7 @@ export const metadata = [
     {
         type: "car",
         direction: false,
-        speed: 80,
+        speed: 100,
         _vehicles: [{ initialTileIndex: 2, color: 0xff0000 }],
         get vehicles() {
             return this._vehicles;
@@ -29,7 +29,7 @@ export const metadata = [
     {
         type: "truck",
         direction: true, 
-        speed: 65,
+        speed: 85,
         vehicles: [{ initialTileIndex: -4, color: 0x00ff00}]
     },
     {

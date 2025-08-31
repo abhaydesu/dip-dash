@@ -1,4 +1,6 @@
 import * as THREE from "three";
+import { endsUpInValidPosition } from "../utilities/endsUpInValidPosition";
+import { addRows } from "./Map";
 
 export const player = Player();
 
@@ -40,6 +42,15 @@ export const position = {
 export const moveQueue = [];
 
 export function queueMove(direction) {
+    const isValidMove = endsUpInValidPosition({
+        rowIndex: position.currentRow,
+        tileIndex: position.currentTile
+    },
+    [...moveQueue, direction]
+    );
+
+    if (!isValidMove) return; 
+    
     moveQueue.push(direction);
 }
 
