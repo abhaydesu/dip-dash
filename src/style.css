@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body { 
   margin: 0;
   display: flex;
+  font-family: "Press Start 2P", cursive;
 }
 
 #controls { 
@@ -30,4 +33,15 @@ body {
 
 #controls button:first-of-type {
   grid-column: 1/-1;
+}
+
+#score { 
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 2em;
+  color: white;
+  padding: 20px;
+  border-radius: 40px;
+  background-color: #052e16;
 }
