@@ -7,6 +7,7 @@ import { map, initializeMap } from "./components/Map";
 import { animateVehicles } from "./animateVehicles";
 import { animatePlayer } from "./animatePlayer";
 import { hitTest } from "./hitTest";
+import { gameOn } from "./constants";
 import "./style.css";
 import "./collectUserInput";
 
@@ -24,6 +25,7 @@ player.add(dirLight);
 const camera = Camera();
 player.add(camera);
 
+const overlayDOM = document.getElementById('overlay');
 const scoreDOM = document.getElementById("score");
 const resultDOM = document.getElementById("result-container");
 
@@ -34,9 +36,11 @@ document.getElementById("retry")?.addEventListener("click", initializeGame);
 function initializeGame() {
   initializePlayer();
   initializeMap();
-
+  
+  gameOn();
   if (scoreDOM) scoreDOM.innerText = "0";
   if (resultDOM) resultDOM.style.visibility = "hidden";
+  if (overlayDOM) overlayDOM.style.visibility = "hidden";
 }
 
 const renderer = Renderer();

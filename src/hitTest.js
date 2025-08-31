@@ -1,7 +1,9 @@
 import * as THREE from "three";
 import { metadata as rows } from "./components/Map";
 import { player, position } from "./components/Player";
+import { gameOff } from "./constants";
 
+const overlayDOM = document.getElementById('overlay')
 const resultDOM = document.getElementById('result-container');
 const finalScoreDOM = document.getElementById('final-score');
 
@@ -20,8 +22,10 @@ if (row.type === "car" ||  row.type === "truck") {
         vehicleBoundingBox.setFromObject(ref);
 
         if (playerBoundingBox.intersectsBox(vehicleBoundingBox)) {
+            gameOff();
             if (!resultDOM || !finalScoreDOM) return;
             resultDOM.style.visibility = "visible";
+            overlayDOM.style.visibility = "visible";
             finalScoreDOM.innerText = position.currentRow.toString();
         }
     });

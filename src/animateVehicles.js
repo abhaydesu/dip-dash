@@ -1,10 +1,11 @@
 import * as THREE from "three";
 import { metadata as rows } from "./components/Map";
-import { maxTileIndex, minTileIndex, tileSize } from "./constants";
+import { isGameOn, maxTileIndex, minTileIndex, tileSize } from "./constants";
 
 const clock = new THREE.Clock();
 
 export function animateVehicles() {
+    if (isGameOn) {
     const delta = clock.getDelta();
 
     rows.forEach((rowData) => {
@@ -23,4 +24,5 @@ export function animateVehicles() {
             });
         }
     });
+}
 }
