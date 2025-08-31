@@ -1,45 +1,12 @@
 import * as THREE from "three";
+import { generateRows } from "../utilities/generateRows";
 import { Road } from "./Road";
 import { Grass } from "./Grass";
 import { Tree } from "./Tree";
 import { Truck } from "./Truck"
 import { Car} from "./Car";
 
-export const metadata = [
-    {
-        type: "car",
-        direction: false,
-        speed: 100,
-        _vehicles: [{ initialTileIndex: 2, color: 0xff0000 }],
-        get vehicles() {
-            return this._vehicles;
-        },
-        set vehicles(value) {
-            this._vehicles = value;
-        },
-    },
-    {
-        type: "forest",
-        trees : [
-            { tileIndex: -3, height: 50},
-            { tileIndex: 2, height: 30},
-            { tileIndex: -5, height: 50},
-        ]
-    },
-    {
-        type: "truck",
-        direction: true, 
-        speed: 85,
-        vehicles: [{ initialTileIndex: -4, color: 0x00ff00}]
-    },
-    {
-        type: "forest",
-        trees : [
-            { tileIndex: -2, height: 30},
-            { tileIndex: 4, height: 40},
-        ]
-    }
-]
+export const metadata = [];
 
 export const map = new THREE.Group();
 
@@ -52,8 +19,13 @@ export function initializeMap() {
 }
 
 export function addRows() {
-    metadata.forEach((rowData, index) => {
-        const rowIndex = index + 1;
+    const newMetaData = generateRows(20);
+
+    const startIndex = metadata.length;
+    metadata.push(...newMetaData);
+
+    newMetaData.forEach((rowData, index) => {
+        const rowIndex = startIndex + index + 1;
 
         if (rowData.type === "forest") {
             const row = Grass(rowIndex);
