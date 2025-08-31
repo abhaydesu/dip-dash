@@ -2,6 +2,7 @@ import * as THREE from "three";
 import { metadata as rows } from "./components/Map";
 import { maxTileIndex, minTileIndex, tileSize } from "./constants";
 import { isGameOn, isGamePaused } from "./pause";
+import { position } from "./components/Player";
 export const clock = new THREE.Clock();
 
 export function animateVehicles() {
@@ -16,10 +17,14 @@ export function animateVehicles() {
             rowData.vehicles.forEach(({ ref }) => {
                 if (!ref) throw Error("Vehicle reference is missing!");
 
+                const levelFactor = Math.floor(position.currentRow / 50);
+                const speedMultiplier = 1 + (levelFactor * 0.25);
+                const effectiveSpeed = rowData.speed * speedMultiplier;
+
                 if (rowData.direction) {
-                    ref.position.x = ref.position.x > endOfRow ? begginningOfRow : ref.position.x + rowData.speed * delta;
+                    ref.position.x = ref.position.x > endOfRow ? begginningOfRow : ref.position.x + effectiveSpeed * delta;
                 } else { 
-                    ref.position.x = ref.position.x < begginningOfRow ? endOfRow : ref.position.x - rowData.speed * delta;
+                    ref.position.x = ref.position.x < begginningOfRow ? endOfRow : ref.position.x - effectiveSpeed * delta;
                 }
             });
         }
