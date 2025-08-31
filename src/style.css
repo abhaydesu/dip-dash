@@ -37,14 +37,19 @@ body {
 }
 
 #score { 
-  position: absolute;
+  /* position: absolute; */
   top: 20px;
   left: 20px;
   font-size: 2em;
-  color: white;
+  color: #bbf7d0;
   padding: 20px;
   border-radius: 40px;
-  background-color: #052e16;
+  background-color: #052e1695;
+      text-shadow:
+    -2px -1px 0 black,
+     2px -1px 0 black,
+    -2px 1px 0 black,
+     2px 1px 0 black;
 }
 
 #result-container {
@@ -75,11 +80,12 @@ body {
   button { 
     color: #fca5a5;
     background-color: #7f1d1d;
-    padding: 20px 50px 20px 50px;
+    padding: 15px 10px;
     font-family: inherit;
+    box-shadow: 5px 5px #fca5a5 ;
     font-size: inherit;
     cursor: pointer;
-  }
+  } 
 }
 
 #overlay { 
@@ -94,7 +100,7 @@ body {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: #1a2e0560;  /* dark transparent overlay */
+  background: #1a2e0560; 
   display: none;
   align-items: center;
   justify-content: center;
@@ -110,14 +116,50 @@ body {
 }
 
 #resume-btn { 
-    all: unset;
-    color: #ecfccb;
-    background-color: #65a30d;
-    padding: 10px 20px;
-    box-shadow: 5px 5px #052e16 ;
-    cursor: pointer;
+  all: unset;
+  color: #ecfccb;
+  background-color: #65a30d;
+  padding: 10px 20px;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  box-shadow: 5px 5px #052e16;  
+  transition: all 0.1s ease-in-out;
+}
 
-    /* font-family: inherit;
-    font-size: inherit;
-    cursor: pointer; */
+#resume-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px #052e16;
+}
+
+
+.title-holder { 
+  border-radius: 10px ;
+  margin: 15px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  gap: 20px;
+}
+
+#title { 
+    background-color:#052e1695;
+    padding: 20px 25px;
+    border-radius: 20px;
+    color: #bbf7d0;
+    text-shadow:
+    -2px -1px 0 black,
+     2px -1px 0 black,
+    -2px 1px 0 black,
+     2px 1px 0 black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  gap : 15px
+}
+
+img { 
+  height: 60px;
+  width: 90px;
 }
