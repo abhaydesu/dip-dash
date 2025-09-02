@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bytesized&display=swap');
 
 body {
   margin: 0;
@@ -59,16 +58,13 @@ body::selection {
   font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.15s ease-in-out;
-  /* animation: pulse 1.5s infinite; */
 }
 
-/* Hover → give it a bold 3D shadow (like your title) */
 #start-btn:hover {
   transform: scale(1.05) translateY(-4px);
   box-shadow: 8px 8px #052e16, 12px 12px #164e63;
 }
 
-/* Active → pressed in */
 #start-btn:active {
   transform: translateY(3px);
   box-shadow: 2px 2px #052e16;
@@ -89,22 +85,7 @@ body::selection {
     box-shadow: 6px 6px #052e16;
   }
 }
-#credits {
-  margin-top: 50px;
-  font-size: 0.8rem;
-  color: #ffffff;
-  opacity: 0.8;
-}
 
-#credits a {
-  color: white;
-  text-decoration: none;
-  border-bottom: 1px dashed #bbf7d0;
-}
-
-#credits a:hover {
-  color: #dcfce7;
-}
 
 #loader {
   position: fixed;
@@ -149,7 +130,7 @@ body::selection {
     margin: 10px;
 }
 
-footer {
+#footer-instruction {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -173,3 +154,16 @@ footer {
   50%  { opacity: 0.4; }
   100% { opacity: 1; }
 } 
+
+#credit {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.jp { 
+  color: #052e16;
+  font-size: 20px;
+  margin-top: 8px;
+  font-weight: 700 ;
+}
