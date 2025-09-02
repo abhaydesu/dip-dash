@@ -18,7 +18,7 @@ export function animateVehicles() {
         if (!ref) throw Error("Vehicle reference is missing!");
 
         const levelFactor = Math.floor(position.currentRow / 50);
-        const speedMultiplier = 1 + levelFactor * 0.25;
+        const speedMultiplier = 1 + levelFactor * 0.15;
         const effectiveSpeed = rowData.speed * speedMultiplier;
 
         if (rowData.direction) {

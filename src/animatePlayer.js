@@ -4,6 +4,7 @@ import { player, position } from "./components/Player";
 import { tileSize } from "./constants";
 import { isGamePaused, isGameOn, gameOn } from "./gameHalt";
 import { getMoveClock, resetMoveClock } from "./moveClock";
+import { ScoreManager } from "./components/Score";
 
 const moveClock = getMoveClock();
 
@@ -16,7 +17,9 @@ export function animatePlayer() {
     moveClock.start();
   }    
 
-  const stepTime = 0.2;
+  let stepTime = 0.2;
+  let score = ScoreManager.getScore();
+  (score > 150) ? stepTime = 0.15 : stepTime = 0.2;
   const progress = Math.min(1, moveClock.getElapsedTime() / stepTime);
 
   setPosition(progress);
