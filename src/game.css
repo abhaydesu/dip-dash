@@ -37,7 +37,6 @@ body {
 }
 
 #score { 
-  /* position: absolute; */
   top: 20px;
   left: 20px;
   font-size: 2em;
@@ -166,4 +165,3 @@ img {
   height: 60px;
   width: 90px;
 }
-

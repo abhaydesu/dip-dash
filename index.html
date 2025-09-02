@@ -3,29 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="/dip-dash.png">
+  <link rel="icon" type="image/png" href="/dip_dash_logo.png">
 
   <title>Dip-Dash</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+
+   <div id="logo-holder">
+      <div>
+        <a tabindex="-1" target="_blank" href="https://www.linkedin.com/in/abhaydesu/">
+          <img class="logo" src="/linkedin2.png" alt="linkedin">
+        </a>
+      </div>
+      <div>
+        <a tabindex="-1" target="_blank" href="https://github.com/abhaydesu/dip-dash">
+          <img class="logo" src="/github.png" alt="github">
+        </a>
+      </div>
+    </div>
+    
   <div id="title">Dip-Dash</div>
   <button class="pulse-btn" id="start-btn">Start Game</button>
 
   <footer>
     <div id="instruction">Press tab + enter to start the game</div>
-    <div id="logo-holder">
-      <div>
-        <a target="_blank" href="https://www.linkedin.com/in/abhaydesu/">
-          <img class="logo" src="/linkedin2.png" alt="linkedin">
-        </a>
-      </div>
-      <div>
-        <a target="_blank" href="https://github.com/abhaydesu/dip-dash">
-          <img class="logo" src="/github.png" alt="github">
-        </a>
-      </div>
-    </div>
   </footer>
 
   <div id="loader">
@@ -34,6 +36,10 @@
   <script>
     const btn = document.getElementById("start-btn");
     const loader = document.getElementById("loader");
+
+      window.addEventListener("pageshow", () => {
+        loader.style.display = "none";
+      });
 
     btn.addEventListener("click", () => {
       loader.style.display = "flex";

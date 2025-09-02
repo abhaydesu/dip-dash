@@ -12,7 +12,7 @@ body {
 
   background-image: url(./public/background-1.jpg);
   background-size: cover;      
-  background-position: center; 
+  background-position: bottom; 
   background-repeat: no-repeat; 
 
   color: #bbf7d0;
@@ -25,21 +25,27 @@ body {
   padding: 20px 30px;
   border-radius: 20px;
   color: #ecfccb;
-  text-shadow: 
-    2px 2px 0 #4b0c0c,  
-    4px 4px 0 #000000,  
-    -2px -2px 0 #164e63;
+  text-shadow:
+    6px 6px 0 #000,      
+    10px 10px 0 #4b0c0c,
+    -4px -4px 0 #164e63;
   text-align: center;
   margin-bottom: 40px;
-  transition: transform 0.15s ease-in-out;
+  transition: transform 0.2s ease, text-shadow 0.2s ease;
 }
 
 #title:hover {
-  transform: translateY(-4px);
+  transform: scale(1.08) translateY(-8px);
   text-shadow: 
-    3px 3px 0 #4b0c0c, 
-    6px 6px 0 #000000, 
-    -3px -3px 0 #22d3ee; 
+    8px 8px 0 #000, 
+    12px 12px 0 #4b0c0c, 
+    -5px -5px 0 #22d3ee;
+}
+
+
+
+body::selection { 
+  background-color: #a86c54;
 }
 
 
@@ -52,15 +58,22 @@ body {
   font-family: inherit;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: all 0.1s ease-in-out;
-
-  animation: pulse 1.5s infinite;
+  transition: all 0.15s ease-in-out;
+  /* animation: pulse 1.5s infinite; */
 }
 
+/* Hover → give it a bold 3D shadow (like your title) */
+#start-btn:hover {
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 8px 8px #052e16, 12px 12px #164e63;
+}
+
+/* Active → pressed in */
 #start-btn:active {
   transform: translateY(3px);
   box-shadow: 2px 2px #052e16;
 }
+
 
 @keyframes pulse {
   0% {
@@ -121,6 +134,9 @@ body {
 
 
 #logo-holder { 
+    position: absolute;
+    top: 10px;
+    right: 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -142,6 +158,18 @@ footer {
   padding: 10px;
 }
 
-#instruction { 
-    margin-bottom: 100px;
+.logo:hover { 
+   transform: scale(1.15) translateY(-3px);
+   transition: all 0.2s ease-in-out;
 }
+
+#instruction { 
+  margin-bottom: 21vh;
+  animation: blink 2s infinite linear;
+}
+
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.4; }
+  100% { opacity: 1; }
+} 
