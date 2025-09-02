@@ -45,3 +45,32 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/abhaydesu/dip-dash.git
+```
+Navigate to the project directory:
+
+```bash
+cd dip-dash
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+### ◾Running the Game 
+
+To start a local development server and play the game, run the following command:
+
+```bash
+npm run dev
+```
+
+The game will be available at http://localhost:5173 (or a similar address) in your browser. 
+
+## ◾Project Structure 
+The project is structured to keep components organized and maintainable. Here's a brief overview: 
+- **src/**: Contains all the game logic and components. 
+- **components/**: Houses all the building blocks of the game, such as the Camera, Player, Map, Car, and Truck. 
+- **utilities/**: Contains utility functions for things like calculating positions and generating rows. 
+- **main.js**: The main entry point of the application, where the game loop is set up and all components are initialized.
