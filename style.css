@@ -10,9 +10,9 @@ body {
   font-family: "Press Start 2P", cursive;
 
   background-image: url(./public/background-1.jpg);
-  background-size: cover;      
-  background-position: bottom; 
-  background-repeat: no-repeat; 
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
 
   color: #bbf7d0;
   text-align: center;
@@ -25,7 +25,7 @@ body {
   border-radius: 20px;
   color: #ecfccb;
   text-shadow:
-    6px 6px 0 #000,      
+    6px 6px 0 #000,
     10px 10px 0 #4b0c0c,
     -4px -4px 0 #164e63;
   text-align: center;
@@ -35,18 +35,15 @@ body {
 
 #title:hover {
   transform: scale(1.08) translateY(-8px);
-  text-shadow: 
-    8px 8px 0 #000, 
-    12px 12px 0 #4b0c0c, 
+  text-shadow:
+    8px 8px 0 #000,
+    12px 12px 0 #4b0c0c,
     -5px -5px 0 #22d3ee;
 }
 
-
-
-body::selection { 
+body::selection {
   background-color: #a86c54;
 }
-
 
 #start-btn {
   color: #052e16;
@@ -70,29 +67,16 @@ body::selection {
   box-shadow: 2px 2px #052e16;
 }
 
-
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 6px 6px #052e16;
-  }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 8px 8px #052e16;
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 6px 6px #052e16;
-  }
+  0% { transform: scale(1); box-shadow: 6px 6px #052e16; }
+  50% { transform: scale(1.05); box-shadow: 8px 8px #052e16; }
+  100% { transform: scale(1); box-shadow: 6px 6px #052e16; }
 }
-
 
 #loader {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: #052e16;
   display: none;
   align-items: center;
@@ -113,38 +97,35 @@ body::selection {
   to { opacity: 0.3; }
 }
 
-
-#logo-holder { 
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+#logo-holder {
+  position: absolute;
+  top: 10px; right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.logo { 
-    height: 40px;
-    width: 40px;
-    margin: 10px;
+.logo {
+  height: 40px;
+  width: 40px;
+  margin: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.15) translateY(-3px);
 }
 
 #footer-instruction {
   position: fixed;
-  bottom: 0;
-  left: 0;
+  bottom: 0; left: 0;
   width: 100%;
   text-align: center;
   padding: 10px;
 }
 
-.logo:hover { 
-   transform: scale(1.15) translateY(-3px);
-   transition: all 0.2s ease-in-out;
-}
-
-#instruction { 
+#instruction {
   margin-bottom: 21vh;
   animation: blink 2s infinite linear;
 }
@@ -157,13 +138,47 @@ body::selection {
 
 #credit {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 10px; right: 10px;
 }
 
-.jp { 
+.jp {
   color: #052e16;
   font-size: 20px;
   margin-top: 8px;
-  font-weight: 700 ;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  #title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+  }
+
+  #start-btn {
+    padding: 15px 25px;
+    font-size: 1rem;
+  }
+
+  .jp {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .logo {
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+  }
+
+  #instruction {
+    margin-bottom: 12vh;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #instruction {
+    display: none;
+  }
 }

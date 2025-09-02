@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-body { 
+body {
   margin: 0;
   display: flex;
   font-family: "Press Start 2P", cursive;
 }
 
-#controls { 
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#controls {
   position: absolute;
   bottom: 20px;
   min-width: 100%;
@@ -27,7 +33,7 @@ body {
   background-color: #dcfce7;
   color: #052e16;
   border: 1px solid lightgray;
-  box-shadow: 5px 5px #052e16 ;
+  box-shadow: 5px 5px #052e16;
   cursor: pointer;
   outline: none;
 }
@@ -36,15 +42,14 @@ body {
   grid-column: 1/-1;
 }
 
-#score { 
-  top: 20px;
-  left: 20px;
+#score {
+  top: 20px; left: 20px;
   font-size: 2em;
   color: #bbf7d0;
   padding: 20px;
   border-radius: 40px;
   background-color: #052e1695;
-      text-shadow:
+  text-shadow:
     -2px -1px 0 black,
      2px -1px 0 black,
     -2px 1px 0 black,
@@ -61,46 +66,46 @@ body {
   align-items: center;
   justify-content: center;
   visibility: hidden;
-
-  h1, p {
-    color: #052e16
-  }
-
-
-  #result { 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #dcfce7;
-    padding: 34px 40px;
-    border: 5px solid #052e16;
-    border-radius: 10px;
-  }
-
-  button { 
-    color: #fca5a5;
-    background-color: #7f1d1d;
-    padding: 15px 10px;
-    font-family: inherit;
-    box-shadow: 5px 5px #fca5a5 ;
-    font-size: inherit;
-    cursor: pointer;
-  } 
 }
 
-#overlay { 
+#result-container h1,
+#result-container p {
+  color: #052e16;
+}
+
+#result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #dcfce7;
+  padding: 34px 40px;
+  border: 5px solid #052e16;
+  border-radius: 10px;
+}
+
+#result button {
+  color: #fca5a5;
+  background-color: #7f1d1d;
+  padding: 15px 10px;
+  font-family: inherit;
+  box-shadow: 5px 5px #fca5a5;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+#overlay {
   visibility: hidden;
   position: absolute;
   background-color: #1a2e0575;
   height: 100vh;
-  width: 193.7vh;
+  width: 100vw;
 }
 
 #pause-screen {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: #1a2e0560; 
+  background: #1a2e0560;
   display: none;
   align-items: center;
   justify-content: center;
@@ -115,7 +120,7 @@ body {
   text-align: center;
 }
 
-#resume-btn { 
+#resume-btn {
   all: unset;
   color: #ecfccb;
   background-color: #65a30d;
@@ -123,7 +128,7 @@ body {
   font-family: inherit;
   font-size: inherit;
   cursor: pointer;
-  box-shadow: 5px 5px #052e16;  
+  box-shadow: 5px 5px #052e16;
   transition: all 0.1s ease-in-out;
 }
 
@@ -132,24 +137,22 @@ body {
   box-shadow: 0 2px #052e16;
 }
 
-
-.title-holder { 
+.title-holder {
   position: absolute;
   top: 20px;
-  border-radius: 10px ;
+  border-radius: 10px;
   margin: 15px;
   display: flex;
-  position: absolute;
   align-items: center;
   gap: 20px;
 }
 
-#title { 
-    background-color:#052e1695;
-    padding: 20px 25px;
-    border-radius: 20px;
-    color: #bbf7d0;
-    text-shadow:
+#title {
+  background-color: #052e1695;
+  padding: 20px 25px;
+  border-radius: 20px;
+  color: #bbf7d0;
+  text-shadow:
     -2px -1px 0 black,
      2px -1px 0 black,
     -2px 1px 0 black,
@@ -158,10 +161,41 @@ body {
   justify-content: space-between;
   align-items: center;
   font-size: 2rem;
-  gap : 15px
+  gap: 15px;
 }
 
-img { 
+img {
   height: 60px;
   width: 90px;
+}
+
+@media (max-width: 768px) {
+  #controls div {
+    grid-template-columns: 60px 60px 60px;
+    gap: 8px;
+  }
+
+  #controls button {
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  #score {
+    font-size: 1.2em;
+    padding: 10px;
+  }
+
+  #title {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+  }
+
+  #pause-content {
+    padding: 30px 40px;
+  }
+
+  #resume-btn {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
 }

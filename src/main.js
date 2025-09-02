@@ -63,16 +63,28 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
-
 const renderer = Renderer();
 
-if (!isGamePaused)  renderer.setAnimationLoop(animate);
+function onWindowResize() {
+  const aspect = window.innerWidth / window.innerHeight;
+  const size = 300;
+
+  camera.left = - (size * aspect) / 2;
+  camera.right = (size * aspect) / 2;
+  camera.top = size / 2;
+  camera.bottom = -size / 2;
+
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
+window.addEventListener("resize", onWindowResize);
+onWindowResize();
+
+if (!isGamePaused) renderer.setAnimationLoop(animate);
 
 function animate() {
-
   animateVehicles();
   animatePlayer();
   hitTest();
-
   renderer.render(scene, camera);
 }
