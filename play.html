@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="icon" type="image/png" href="./public/dip-dash.png">
-     <link rel="stylesheet" href="./src/game.css">
+    <link rel="icon" type="image/png" href="/dip-dash.png">
     <title>Dip-Dash</title>
     <style>
       #loader {
@@ -15,8 +14,8 @@
       }
     </style>
   </head>
-  <div>
-    <div id="game-container" style="display:none;"></div>
+  <body>
+    <div id="game-container" style="display:none;">
       <div id="overlay"></div>
       <canvas id="game"></canvas>
       <div id="controls">
@@ -28,8 +27,8 @@
         </div>
       </div>
       <div class="title-holder">
-      <div id="score">0</div>
-      <div id="title">Dip-Dash</div>
+        <div id="score">0</div>
+        <div id="title">Dip-Dash</div>
       </div>
       <div id="result-container">
         <div id="result">
@@ -46,16 +45,17 @@
         </div>
       </div>
     </div>
-        <div id="loader">
-        <div class="loader-text">Loading Game...</div>
+
+    <div id="loader">
+      <div class="loader-text">Loading Game...</div>
     </div>
-    <script type="module" src="./src/main.js"></script>
-    
+
+    <script type="module" src="/src/main.js"></script>
     <script>
-        window.addEventListener("load", () => {
-          document.getElementById("loader").style.display = "none"; 
-          document.getElementById("game-container").style.display = "block"; 
-        });
+      window.addEventListener("load", () => {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("game-container").style.display = "block";
+      });
     </script>
   </body>
 </html>

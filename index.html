@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="./public/dip-dash.png">
+  <link rel="icon" type="image/png" href="/dip-dash.png">
 
   <title>Dip-Dash</title>
   <link rel="stylesheet" href="./style.css">
@@ -12,21 +12,19 @@
   <div id="title">Dip-Dash</div>
   <button class="pulse-btn" id="start-btn">Start Game</button>
 
-  <footer >
-    <div id="instruction">
-        Press tab + enter to start the game
-    </div>
+  <footer>
+    <div id="instruction">Press tab + enter to start the game</div>
     <div id="logo-holder">
-    <div>
+      <div>
         <a target="_blank" href="https://www.linkedin.com/in/abhaydesu/">
-            <img class="logo" src="./public/linkedin2.png" alt="github">
+          <img class="logo" src="/linkedin2.png" alt="linkedin">
         </a>
-    </div>
-    <div >
+      </div>
+      <div>
         <a target="_blank" href="https://github.com/abhaydesu/dip-dash">
-            <img class="logo" src="./public/github.png" alt="github">
+          <img class="logo" src="/github.png" alt="github">
         </a>
-    </div>
+      </div>
     </div>
   </footer>
 
@@ -38,7 +36,7 @@
     const loader = document.getElementById("loader");
 
     btn.addEventListener("click", () => {
-      loader.style.display = "flex"; 
+      loader.style.display = "flex";
       setTimeout(() => {
         window.location.href = "play.html";
       }, 1200);
