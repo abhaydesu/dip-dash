@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { endsUpInValidPosition } from "../utilities/endsUpInValidPosition";
 import { metadata as rows, addRows } from "./Map";
+import { ScoreManager } from "./Score";
 
 export const player = Player();
 
@@ -78,11 +79,7 @@ export function stepCompleted() {
 
     if (position.currentRow > rows.length - 10) addRows();
 
-    const scoreDOM = document.getElementById('score');
-    let currentScore = Number(scoreDOM.innerText)
-    if ( position.currentRow.toString() > currentScore) {
-        scoreDOM.innerText = ++currentScore;
-        document.getElementById('current-score').innerText = currentScore;
-        document.getElementById('final-score').innerText = currentScore;
+    if ( position.currentRow.toString() > ScoreManager.getScore()) {
+        ScoreManager.increment();
     }
 }

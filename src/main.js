@@ -7,7 +7,8 @@ import { map, initializeMap } from "./components/Map";
 import { animateVehicles } from "./animateVehicles";
 import { animatePlayer } from "./animatePlayer";
 import { hitTest } from "./hitTest";
-import { gameOn, isGamePaused, togglePause } from "./pause";
+import { gameOn, isGamePaused, togglePause } from "./gameHalt";
+import { ScoreManager } from "./components/Score";
 import "./style.css";
 import "./collectUserInput";
 
@@ -43,9 +44,10 @@ retryDOM.addEventListener('keydown', (e) => {
 function initializeGame() {
   initializePlayer();
   initializeMap();
-  
   gameOn();
-  if (scoreDOM) scoreDOM.innerText = "0";
+  
+  ScoreManager.reset();
+  
   if (resultDOM) resultDOM.style.visibility = "hidden";
   if (overlayDOM) overlayDOM.style.visibility = "hidden";
 }
