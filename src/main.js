@@ -28,7 +28,6 @@ player.add(camera);
 
 const retryDOM = document.getElementById('retry');
 const overlayDOM = document.getElementById('overlay');
-const scoreDOM = document.getElementById("score");
 const resultDOM = document.getElementById("result-container");
 
 initializeGame();
@@ -52,7 +51,6 @@ function initializeGame() {
   if (overlayDOM) overlayDOM.style.visibility = "hidden";
 }
 
-const pauseScreen = document.getElementById("pause-screen");
 const resumeBtn = document.getElementById("resume-btn");
 
 resumeBtn.addEventListener("click", () => {

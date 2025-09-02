@@ -2,6 +2,7 @@ import * as THREE from "three";
 import { endsUpInValidPosition } from "../utilities/endsUpInValidPosition";
 import { metadata as rows, addRows } from "./Map";
 import { ScoreManager } from "./Score";
+import { resetMoveClock } from "../moveClock";
 
 export const player = Player();
 
@@ -46,14 +47,16 @@ export const position = {
 export const moveQueue = [];
 
 export function initializePlayer() {
-    player.position.x = 0;
-    player.position.y = 0;
+    player.position.set(0,0,0);
     player.children[0].position.z = 0;
+    player.children[0].rotation.set(0,0,0);
 
     position.currentRow = 0;
     position.currentTile = 0;
 
     moveQueue.length = 0;
+    
+    resetMoveClock();
 }
 
 export function queueMove(direction) {
@@ -79,7 +82,7 @@ export function stepCompleted() {
 
     if (position.currentRow > rows.length - 10) addRows();
 
-    if ( position.currentRow.toString() > ScoreManager.getScore()) {
+    if ( position.currentRow > ScoreManager.getScore()) {
         ScoreManager.increment();
     }
 }

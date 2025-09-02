@@ -3,14 +3,18 @@ import { moveQueue, stepCompleted } from "./components/Player";
 import { player, position } from "./components/Player";
 import { tileSize } from "./constants";
 import { isGamePaused, isGameOn, gameOn } from "./gameHalt";
+import { getMoveClock, resetMoveClock } from "./moveClock";
 
-const moveClock = new THREE.Clock(false);
+const moveClock = getMoveClock();
 
 export function animatePlayer() {
   if (!isGameOn || isGamePaused) return;
   if (!moveQueue.length) return;
 
-  if (!moveClock.running) moveClock.start();
+  if (!moveClock.running) { 
+    resetMoveClock();
+    moveClock.start();
+  }    
 
   const stepTime = 0.2;
   const progress = Math.min(1, moveClock.getElapsedTime() / stepTime);
