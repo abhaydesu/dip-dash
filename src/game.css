@@ -50,6 +50,7 @@ body {
      2px -1px 0 black,
     -2px 1px 0 black,
      2px 1px 0 black;
+  z-index: 10;
 }
 
 #result-container {
@@ -134,6 +135,8 @@ body {
 
 
 .title-holder { 
+  position: absolute;
+  top: 20px;
   border-radius: 10px ;
   margin: 15px;
   display: flex;
@@ -163,3 +166,4 @@ img {
   height: 60px;
   width: 90px;
 }
+

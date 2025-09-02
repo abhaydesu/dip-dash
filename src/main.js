@@ -9,7 +9,7 @@ import { animatePlayer } from "./animatePlayer";
 import { hitTest } from "./hitTest";
 import { gameOn, isGamePaused, togglePause } from "./gameHalt";
 import { ScoreManager } from "./components/Score";
-import "./style.css";
+import "./game.css";
 import "./collectUserInput";
 
 const scene = new THREE.Scene();

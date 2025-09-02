@@ -1,41 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="icon" type="image/png" href="./dip-dash.png">
-    <title>Dip-Dash</title>
-  </head>
-  <body>
-    <div id="overlay"></div>
-    <canvas id="game"></canvas>
-    <div id="controls">
-      <div>
-        <button id="forward">▲</button>
-        <button id="left">◀</button>
-        <button id="backward">▼</button>
-        <button id="right">▶</button>
-      </div>
-    </div>
-    <div class="title-holder">
-    <div id="score">0</div>
-    <div id="title">Dip-Dash</div>
-    </div>
-    <div id="result-container">
-      <div id="result">
-        <h1>Game Over!</h1>
-        <p>Your Score: <span id="final-score"></span></p>
-        <button id="retry">Try again..</button>
-      </div>
-    </div>
-    <div id="pause-screen">
-      <div id="pause-content">
-        <h1>Paused</h1>
-        <p>Current score: <span id="current-score"></span> </p>
-        <button id="resume-btn">Resume</button>
-      </div>
-    </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crossy Road Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="title">Dip-Dash</div>
+  <button class="pulse-btn" id="start-btn">Start Game</button>
 
-    <script type="module" src="/src/main.js"></script>
-  </body>
+  <footer >
+    <div id="instruction">
+        Press tab + enter to start the game
+    </div>
+    <div id="logo-holder">
+    <div>
+        <a target="_blank" href="https://www.linkedin.com/in/abhaydesu/">
+            <img class="logo" src="./public/linkedin2.png" alt="github">
+        </a>
+    </div>
+    <div >
+        <a target="_blank" href="https://github.com/abhaydesu/dip-dash">
+            <img class="logo" src="./github.png" alt="github">
+        </a>
+    </div>
+    </div>
+  </footer>
+
+  <div id="loader">
+    <div class="loader-text">Loading...</div>
+  </div>
+  <script>
+    const btn = document.getElementById("start-btn");
+    const loader = document.getElementById("loader");
+
+    btn.addEventListener("click", () => {
+      loader.style.display = "flex"; 
+      setTimeout(() => {
+        window.location.href = "play.html";
+      }, 1200);
+    });
+  </script>
+</body>
 </html>
