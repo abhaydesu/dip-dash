@@ -62,7 +62,7 @@ function generateCarLaneMetadata() {
         occupiedTiles.add(initialTileIndex);
         occupiedTiles.add(initialTileIndex + 1);
 
-        const color = randomElement([0xa52523, 0xbdb638, 0x78b14b]);
+        const color = randomElement([0xD72638, 0xFFB400,0x3B82F6,  0xF97316,  0x8B5CF6]);
 
         return { initialTileIndex, color };
     });
@@ -96,7 +96,7 @@ function generateTruckLaneMetadata() {
         occupiedTiles.add(initialTileIndex + 1);
         occupiedTiles.add(initialTileIndex + 2);
 
-        const color = randomElement([0xa52523, 0xbdb638, 0x78b14b]);
+        const color = randomElement([0xa52523, 0xbdb638, 0x78b14b, 0x92400E,0x2563EB, 0x1F2937]);
 
         return { initialTileIndex, color };
     });
