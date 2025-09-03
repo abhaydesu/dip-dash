@@ -23,15 +23,16 @@
 - **Obstacles**: Dodge oncoming cars and trucks to stay alive.
 - **Pause Functionality**: Press Escape or click the pause button to take a break.
 - **Responsive Controls**: Use keyboard arrows or on-screen buttons to move.
-
+- **Progressive Difficulty**: Vehicle speed increases by 15% every 50 levels.Player speed increases after 150 levels to keep up with faster vehicles.
+- **Mobile-Friendly**: Fully responsive gameplay experience on phones.
 
 ## ◾How to Play
 
 The objective is simple: cross as many roads as you can without getting hit.
 
-- **Keyboard**: Use the arrow keys (▲, ▼, ◀, ▶) to move your character.
+- **Keyboard**: Use the arrow keys (▲, ▼, ◀, ▶) or WASD to move your character.
 - **On-screen Controls**: Click the corresponding buttons on the screen to move.
-- **Pause**: Press the Escape key or click the pause button to stop the game.
+- **Pause**: Press the Escape key to stop the game. Esc again to resume.
 
 ## ◾Getting Started
 
